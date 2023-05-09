@@ -4,6 +4,8 @@ from pytokr import items, item
 instruccio = item()
 while instruccio != 'fi':
     if instruccio == 'experiment':
+        
+        
         pass
     # ...llegir dades addicionals i processar 'experiment'
     elif instruccio == 'afegir_tret':
