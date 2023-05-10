@@ -8,6 +8,9 @@ class individu:
     def afegir_tret(self, tret):
         self.__trets.add(tret)
 
+    def treure_tret(self, tret):
+        self.__trets.remove(tret)
+
     def obtenir_parelles(self):
         return self.__parell.obtenir_parelles()
 

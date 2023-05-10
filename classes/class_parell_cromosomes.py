@@ -1,5 +1,5 @@
 class parell_cromosomes:
-    def __init__ (self, cromosomes, numero_cromosomes):
+    def __init__ (self, cromosomes="", numero_cromosomes=0):
         self.__cromosoma1 = list(cromosomes[:numero_cromosomes])
         self.__cromosoma2 = list(cromosomes[numero_cromosomes:])
 
@@ -16,6 +16,10 @@ class parell_cromosomes:
         b = self.__cromosoma2
         return [(a[i],b[i]) for i in range(0,len(self.__cromosoma1))]  
     
+    def modificacio(self, cromosomes, numero_cromosomes):
+        self.__cromosoma1 = list(cromosomes[:numero_cromosomes])
+        self.__cromosoma2 = list(cromosomes[numero_cromosomes:])
+   
     def __str__ (self):
         a, b = "  ", "  "
         for i in self.__cromosoma1:

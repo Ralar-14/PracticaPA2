@@ -27,7 +27,10 @@ class conjunt_individus:
     def afegir_tret(self, tret, individu):
         self.__individus[individu].afegir_tret(tret)
 
-    def informació_individu(self, numero_individu):
+    def treure_tret(self, tret, individu):
+        self.__individus[individu].treure_tret(tret)
+
+    def individu(self, numero_individu):
         return self.__individus[numero_individu]
     
     def numero_cromosomes(self):
