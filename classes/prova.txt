@@ -16,6 +16,8 @@ consulta_individu
 4
 consulta_individu 5
 afegir_tret qwerty_12 3
+afegir_tret qwerty_12 1
 consulta_individu 3
+consulta_tret qwerty_12
 fi
 

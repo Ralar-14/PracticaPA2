@@ -29,6 +29,39 @@ class conjunt_individus:
 
     def informació_individu(self, numero_individu):
         return self.__individus[numero_individu]
+    
+    def numero_cromosomes(self):
+        return self.__numero_cromosomes
+    
+    def cromosomes_comuns(self, conjunt_individus):
+    #Input : conjunt_individus es un set amb enters
+    #Output: cromosomes en comú dels individus indicats
+        numero_individus = len(conjunt_individus)
+        parelles = []
+        for i in conjunt_individus:
+            parelles.append(self.__individus[i].obtenir_parelles())
+        resultat = parelles[0]
+        for i in range(1, numero_individus):
+            resultat = self.__interseccio(resultat, parelles[i])
+        return self.__parelles_a_cromosomes(resultat)
+
+    def __interseccio(self, a, b):
+        for i in range(len(a)):
+            if a[i] != b[i]:
+                a[i] = ("-","-")
+        return a
+    
+    def __parelles_a_cromosomes(self, parelles):
+        primer = ""
+        segon = ""
+        for a in parelles:
+            primer += a[0]
+            segon += a[1]
+        return primer + segon
+
+
+
+
         
     
 

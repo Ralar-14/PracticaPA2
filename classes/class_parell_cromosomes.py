@@ -1,7 +1,7 @@
-class Parell_Cromosomes:
-    def __init__ (self, cromosoma1, cromosoma2):
-        self.__cromosoma1 = cromosoma1
-        self.__cromosoma2 = cromosoma2
+class parell_cromosomes:
+    def __init__ (self, cromosomes, numero_cromosomes):
+        self.__cromosoma1 = list(cromosomes[:numero_cromosomes])
+        self.__cromosoma2 = list(cromosomes[numero_cromosomes:])
 
     """
     def get_cromosoma1(self):

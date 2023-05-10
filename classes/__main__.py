@@ -22,13 +22,16 @@ while instruccio != 'fi':
         tret = item()
         individu = int(item())
         trets_actuals.afegir_tret(tret, individu)
-        print(f"afegir_tret {tret} {individu}")
+        
         pass
     # ...llegir dades addicionals i processar 'afegir_tret'
     elif instruccio == 'treure_tret': # només grups 3 persones
         pass
     # ...llegir dades addicionals i processar 'treure_tret'
     elif instruccio == 'consulta_tret':
+        tret = item()
+        print(f"consulta_tret {tret}")
+        trets_actuals.info_tret(tret)
         pass
     # ...llegir dades addicionals i processar 'consulta_tret'
     elif instruccio == 'consulta_individu':
