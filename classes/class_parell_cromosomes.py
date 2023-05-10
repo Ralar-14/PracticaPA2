@@ -14,7 +14,7 @@ class Parell_Cromosomes:
     def obtenir_parelles(self):
         a = self.__cromosoma1   #Guardem les dues llistes en dues variables per estalviar crides als mètodes
         b = self.__cromosoma2
-        return [(a[i],b[i]) for i in range(0,m)]  # m és la llargada dels cromosomes (len(cromosoma1))
+        return [(a[i],b[i]) for i in range(0,len(self.__cromosoma1))]  
     
     def __str__ (self):
         a, b = "  ", "  "

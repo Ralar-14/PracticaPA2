@@ -15,18 +15,21 @@ class conjunt_individus:
     def llegir_arbre(self, marca):
         x = int(item())
         if x != marca:
-            l = self.llegeix_bintree_int(marca)
-            r = self.llegeix_bintree_int(marca)
+            l = self.llegir_arbre(marca)
+            r = self.llegir_arbre(marca)
             return BinTree(x,l,r)
         else:
             return BinTree()
         
     def afegir_individu(self, cromosomes):
         self.__individus.append(individu(cromosomes, self.__numero_cromosomes))
+
+    def informació_individu(self, numero_individu):
+        return self.__individus[numero_individu]
         
     
 
     
         
 
-a = conjunt_individus(4,4,"hola",["00110111", "00110110", "00110101", "11110111"])
+
