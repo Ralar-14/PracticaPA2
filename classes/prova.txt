@@ -15,5 +15,7 @@ consulta_individu
 
 4
 consulta_individu 5
+afegir_tret qwerty_12 3
+consulta_individu 3
 fi
 

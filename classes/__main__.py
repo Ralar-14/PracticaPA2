@@ -19,6 +19,10 @@ while instruccio != 'fi':
         pass
     # ...llegir dades addicionals i processar 'experiment'
     elif instruccio == 'afegir_tret':
+        tret = item()
+        individu = int(item())
+        trets_actuals.afegir_tret(tret, individu)
+        print(f"afegir_tret {tret} {individu}")
         pass
     # ...llegir dades addicionals i processar 'afegir_tret'
     elif instruccio == 'treure_tret': # només grups 3 persones
