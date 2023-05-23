@@ -50,6 +50,3 @@ class parell_cromosomes:
 
 
     
-    
-a = parell_cromosomes("0101010100001111")
-print(a)

@@ -1,0 +1,133 @@
+experiment 5 8
+consulta_individu 1
+  1 1 1 1 1 1 1 1
+  1 1 1 1 1 1 1 1
+consulta_individu 2
+  0 0 0 0 0 0 0 0
+  1 1 1 1 1 1 1 1
+consulta_individu 3
+  0 1 0 1 0 1 0 1
+  0 0 0 0 1 1 1 1
+consulta_individu 4
+  1 0 1 0 1 0 1 0
+  1 0 1 0 1 0 1 0
+consulta_individu 5
+  1 1 0 0 1 1 0 0
+  1 0 1 0 1 0 1 0
+consulta_tret qwerty_12
+afegir_tret qwerty_12 3
+consulta_tret qwerty_12
+  qwerty_12
+  0 1 0 1 0 1 0 1
+  0 0 0 0 1 1 1 1
+  3
+treure_tret qwerty_12 2
+afegir_tret qwerty_12 3
+consulta_individu 3
+  0 1 0 1 0 1 0 1
+  0 0 0 0 1 1 1 1
+  qwerty_12
+treure_tret qwerty_12 3
+consulta_individu 3
+  0 1 0 1 0 1 0 1
+  0 0 0 0 1 1 1 1
+consulta_tret qwerty_12
+afegir_tret asdf_34 5
+consulta_tret asdf_34
+  asdf_34
+  1 1 0 0 1 1 0 0
+  1 0 1 0 1 0 1 0
+  5
+afegir_tret asdf_34 4
+consulta_tret asdf_34
+  asdf_34
+  1 - - 0 1 - - 0
+  1 - - 0 1 - - 0
+  4
+  5
+afegir_tret asdf_34 2
+consulta_tret asdf_34
+  asdf_34
+  - - - - - - - -
+  - - - - - - - -
+  2
+  4
+  5
+afegir_tret zxcv_13 1
+afegir_tret asdf_34 3
+consulta_individu 3
+  0 1 0 1 0 1 0 1
+  0 0 0 0 1 1 1 1
+  asdf_34
+afegir_tret asdf_31 3
+consulta_individu 3
+  0 1 0 1 0 1 0 1
+  0 0 0 0 1 1 1 1
+  asdf_31
+  asdf_34
+experiment 3 3
+consulta_individu 1
+  1 1 1
+  0 1 0
+consulta_individu 2
+  1 1 1
+  0 0 0
+consulta_individu 3
+  1 1 1
+  1 1 1
+consulta_tret qwert1
+afegir_tret qwert1 1
+consulta_tret qwert1
+  qwert1
+  1 1 1
+  0 1 0
+  1
+afegir_tret qwert1 2
+consulta_tret qwert1
+  qwert1
+  1 - 1
+  0 - 0
+  1
+  2
+afegir_tret qwert1 3
+consulta_tret qwert1
+  qwert1
+  - - -
+  - - -
+  1
+  2
+  3
+treure_tret qwert1 3
+consulta_tret qwert1
+  qwert1
+  1 - 1
+  0 - 0
+  1
+  2
+treure_tret qwert1 2
+consulta_tret qwert1
+  qwert1
+  1 1 1
+  0 1 0
+  1
+treure_tret qwert1 1
+experiment 3 3
+consulta_individu 1
+  1 1 1
+  1 1 1
+consulta_individu 2
+  1 1 1
+  1 1 1
+consulta_individu 3
+  1 1 1
+  1 1 1
+afegir_tret qwert1 1
+consulta_individu 1
+  1 1 1
+  1 1 1
+  qwert1
+consulta_tret qwert1
+  qwert1
+  1 1 1
+  1 1 1
+  1
