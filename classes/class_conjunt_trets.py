@@ -1,27 +1,32 @@
-from class_parell_cromosomes import parell_cromosomes
+from provaporro import parell_cromosomes
+import copy
 
 class conjunt_trets:
     def __init__(self, experiment):
         self.__experiment = experiment
         self.__trets = {}
-
-    def afegir_tret(self, tret, individu):
-        self.__experiment.afegir_tret(tret, individu)
+  
+    def afegir_tret(self, tret, numero_individu):
+        self.__experiment.afegir_tret(tret, numero_individu)
         if tret in self.__trets:
-            self.__trets[tret][1].add(individu)
+            self.__trets[tret][1].add(numero_individu)
+            self.__trets[tret][0].interseccio(self.__experiment.individu(numero_individu).parell())
         else:
-            self.__trets[tret] = (parell_cromosomes(), {individu})
-        self.__actualitzar_tret(tret)
+            self.__trets[tret] = (copy.deepcopy(self.__experiment.individu(numero_individu).parell), {numero_individu})
 
     def treure_tret(self, tret, individu):
-        self.__experiment.treure_tret(tret, individu)
-        self.__trets[tret][1].remove(individu)
-        self.__actualitzar_tret(tret)
+        if len(self.__trets[tret][1]) == 1:
+            self.__trets.pop(tret)
+        else:
+            self.__experiment.treure_tret(tret, individu)
+            self.__trets[tret][1].remove(individu)
+            self.__recalcular_tret(tret)
 
-    
-    def __individus_tret(self, tret):
-        if tret in self.__trets:
-            return self.__trets[tret][1]
+    def __recalcular_tret(self, tret):
+        self.__trets[tret][0].reiniciar()
+        llista_individus = []
+        for i in self.__trets[tret][1]:
+            self.__trets[tret][0].interseccio(self.__experiment.individu(i).parell())
         
     def info_tret(self, tret):
         print(f"  {tret}")
@@ -29,10 +34,7 @@ class conjunt_trets:
         for a in self.__trets[tret][1]:
             print(f"  {a}")
 
-    def __actualitzar_tret(self, tret):
-        cromosomes_tret = self.__experiment.cromosomes_comuns(self.__trets[tret][1])
-        self.__trets[tret][0].modificacio(cromosomes_tret, self.__experiment.numero_cromosomes())
-        
+    
         
 
 
