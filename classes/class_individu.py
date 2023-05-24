@@ -14,6 +14,9 @@ class individu:
     def parell(self):
         return self.__parell
     
+    def te_tret(self, tret):
+        return tret in self.__trets
+    
     def __str__(self):
         trets = ""
         for i in self.__trets:

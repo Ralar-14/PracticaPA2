@@ -96,6 +96,16 @@ class BinTree:
         """
         return self._root._left is None and self._root._right is None
 
+    def te_tret(self, atribut):
+        """
+        Pre: self is not empty
+        returns True if the BinTree has the attribute atribut, False if not.
+        """
+        return self._root._element.te_tret(atribut)
+
+
+
+    
     # Traversals 
     def preorder(self):
         """
