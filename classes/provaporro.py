@@ -39,7 +39,7 @@ class parell_cromosomes:
 class parell_cromosomes_trets:
     def __init__ (self, primer_parell):
         self.__llista_combinacions_parelles = [[0,0,0,0] for _ in range(len(primer_parell._llista_parelles))]
-        self.__num_individus = 1
+        self.__num_individus = 0
         self.afegir_parell(primer_parell)
         
     def afegir_parell(self, parell_cromosomes):

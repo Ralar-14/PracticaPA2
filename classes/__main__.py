@@ -46,7 +46,12 @@ while instruccio != 'fi':
         pass
     # ...llegir dades addicionals i processar 'consulta_individu'
     elif instruccio == 'distribucio_tret':
-        pass
+        tret = item()
+        print(f"distribucio_tret {tret}")
+        inordre = experiment_actual.inordre_distribucio(tret)
+        for i in inordre:
+            print(i, end = " ")
+        print()
     # ...llegir dades addicionals i processar 'distribucio_tret'
     instruccio = item()
 

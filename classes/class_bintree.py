@@ -95,17 +95,7 @@ class BinTree:
         returns True if the BinTree is a leaf, False if not. The BinTree is not empty
         """
         return self._root._left is None and self._root._right is None
-
-    def te_tret(self, atribut):
-        """
-        Pre: self is not empty
-        returns True if the BinTree has the attribute atribut, False if not.
-        """
-        return self._root._element.te_tret(atribut)
-
-
-
-    
+   
     # Traversals 
     def preorder(self):
         """
@@ -239,3 +229,8 @@ class BinTree:
                 else:
                     return eq_aux(n1._left, n2._left) and eq_aux(n1._right, n2._right)
             return eq_aux(self._root, b._root)
+        
+    
+
+#Crea una instancia de BinTree, no muy largo, para hacer pruebas
+

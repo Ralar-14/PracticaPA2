@@ -15,12 +15,16 @@ consulta_individu 5
   1 1 0 0 1 1 0 0
   1 0 1 0 1 0 1 0
 consulta_tret qwerty_12
+distribucio_tret qwerty_12
+
 afegir_tret qwerty_12 3
 consulta_tret qwerty_12
   qwerty_12
   0 1 0 1 0 1 0 1
   0 0 0 0 1 1 1 1
   3
+distribucio_tret qwerty_12
+3
 treure_tret qwerty_12 2
 afegir_tret qwerty_12 3
 consulta_individu 3
@@ -33,12 +37,16 @@ consulta_individu 3
   0 0 0 0 1 1 1 1
 consulta_tret qwerty_12
 afegir_tret asdf_34 5
+distribucio_tret asdf_34
+-3 5
 consulta_tret asdf_34
   asdf_34
   1 1 0 0 1 1 0 0
   1 0 1 0 1 0 1 0
   5
 afegir_tret asdf_34 4
+distribucio_tret asdf_34
+4 -1 -3 5
 consulta_tret asdf_34
   asdf_34
   1 - - 0 1 - - 0
@@ -46,6 +54,8 @@ consulta_tret asdf_34
   4
   5
 afegir_tret asdf_34 2
+distribucio_tret asdf_34
+4 -1 2 -3 5
 consulta_tret asdf_34
   asdf_34
   - - - - - - - -
@@ -54,7 +64,11 @@ consulta_tret asdf_34
   4
   5
 afegir_tret zxcv_13 1
+distribucio_tret zxcv_13
+1 -3
 afegir_tret asdf_34 3
+distribucio_tret asdf_34
+4 -1 2 3 5
 consulta_individu 3
   0 1 0 1 0 1 0 1
   0 0 0 0 1 1 1 1
@@ -63,8 +77,8 @@ afegir_tret asdf_31 3
 consulta_individu 3
   0 1 0 1 0 1 0 1
   0 0 0 0 1 1 1 1
-  asdf_31
   asdf_34
+  asdf_31
 experiment 3 3
 consulta_individu 1
   1 1 1
@@ -131,3 +145,6 @@ consulta_tret qwert1
   1 1 1
   1 1 1
   1
+distribucio_tret qwert1
+1
+distribucio_tret asdf
