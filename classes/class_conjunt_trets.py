@@ -23,6 +23,9 @@ class conjunt_trets:
                 self.__trets[tret][1].remove(numero_individu)
                 self.__trets[tret][0].treure_parell(self.__experiment.individu(numero_individu).parell())
         
+    def existeix_tret(self, tret):
+        return tret in self.__trets
+    
     def info_tret(self, tret):
         if tret in self.__trets:
             print(f"  {tret}")

@@ -18,20 +18,17 @@ class parell_cromosomes:
         str1, str2 = "  ", "  "
         for i in self._llista_parelles:
             if i == 0:
-                str1 += "0 "
-                str2 += "0 "
+                str1 += "0"
+                str2 += "0"
             elif i == 1:
-                str1 += "0 "
-                str2 += "1 "
+                str1 += "0"
+                str2 += "1"
             elif i == 2:
-                str1 += "1 "
-                str2 += "0 "
-            elif i == 3:
-                str1 += "1 "
-                str2 += "1 "
+                str1 += "1"
+                str2 += "0"
             else:
-                str1 += "- "
-                str2 += "- "
+                str1 += "1"
+                str2 += "1"
         return str1 + "\n" + str2
     
 
@@ -56,18 +53,18 @@ class parell_cromosomes_trets:
         str1, str2 = "  ", "  "
         for i in range(len(self.__llista_combinacions_parelles)):
             if self.__llista_combinacions_parelles[i][0] == self.__num_individus:
-                str1 += "0 "
-                str2 += "0 "
+                str1 += "0"
+                str2 += "0"
             elif self.__llista_combinacions_parelles[i][1] == self.__num_individus:
-                str1 += "0 "
-                str2 += "1 "
+                str1 += "0"
+                str2 += "1"
             elif self.__llista_combinacions_parelles[i][2] == self.__num_individus:
-                str1 += "1 "
-                str2 += "0 "
+                str1 += "1"
+                str2 += "0"
             elif self.__llista_combinacions_parelles[i][3] == self.__num_individus:
-                str1 += "1 "
-                str2 += "1 "
+                str1 += "1"
+                str2 += "1"
             else:
-                str1 += "- "
-                str2 += "- "
+                str1 += "-"
+                str2 += "-"
         return str1 + "\n" + str2

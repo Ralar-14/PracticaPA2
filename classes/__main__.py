@@ -21,21 +21,31 @@ while instruccio != 'fi':
     elif instruccio == 'afegir_tret':
         tret = item()
         individu = int(item())
-        trets_actuals.afegir_tret(tret, individu)
         print(f"afegir_tret {tret} {individu}")
+        if experiment_actual.individu(individu).te_tret(tret):
+            print(" error")
+        else:
+            trets_actuals.afegir_tret(tret, individu)
         pass
     # ...llegir dades addicionals i processar 'afegir_tret'
     elif instruccio == 'treure_tret': # només grups 3 persones
         tret = item()
         individu = int(item())
-        trets_actuals.treure_tret(tret, individu)
         print(f"treure_tret {tret} {individu}")
+        if not experiment_actual.individu(individu).te_tret(tret):
+            print(" error")
+        else:
+            trets_actuals.treure_tret(tret, individu)
+        
         pass
     # ...llegir dades addicionals i processar 'treure_tret'
     elif instruccio == 'consulta_tret':
         tret = item()
         print(f"consulta_tret {tret}")
-        trets_actuals.info_tret(tret)
+        if not trets_actuals.existeix_tret(tret):
+            print(" error")
+        else:
+            trets_actuals.info_tret(tret)
         pass
     # ...llegir dades addicionals i processar 'consulta_tret'
     elif instruccio == 'consulta_individu':
@@ -48,11 +58,14 @@ while instruccio != 'fi':
     elif instruccio == 'distribucio_tret':
         tret = item()
         print(f"distribucio_tret {tret}")
-        inordre = experiment_actual.inordre_distribucio(tret)
-        for i in inordre:
-            print(i, end = " ")
-        print()
+        if not trets_actuals.existeix_tret(tret):
+            print(" error")
+        else:
+            inordre = experiment_actual.inordre_distribucio(tret)
+            for i in inordre:
+                print(f"  {i}", end="")
+            print()
     # ...llegir dades addicionals i processar 'distribucio_tret'
     instruccio = item()
-
+print("fi")
 
