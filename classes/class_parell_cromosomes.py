@@ -1,23 +1,36 @@
 class parell_cromosomes:
-    def __init__ (self, cromosomes):
-        self.__cromosoma1 = list(cromosomes[len(cromosomes)//2:]) #Dividim la llista de cromosomes en dues parts
-        self.__cromosoma2 = list(cromosomes[len(cromosomes)//2:])
-
-    """
-    def get_cromosoma1(self):
-        return self.__cromosoma1
+    def __init__ (self, cromosomes=""):
+        self.__crear_estructura(cromosomes)
     
-    def get_cromosoma2(self):
-        return self.__cromosoma2
-    def modificacio(self, cromosomes, numero_cromosomes):
-        self.__cromosoma1 = list(cromosomes[:numero_cromosomes])
-        self.__cromosoma2 = list(cromosomes[numero_cromosomes:])
-   """
-   
+    def __crear_estructura(self, cromosomes):
+        '''
+        Els cromosomes venen definits per una llista de enters. 0 representa (0,0), 1 representa (0,1), 2 representa (1,0) i 3 representa (1,1))
+        '''
+        self._llista_parelles = [0] * (len(cromosomes)//2)
+        for i in range(len(cromosomes)//2):
+            if cromosomes[i] == "1":
+                self._llista_parelles[i] = 2
+        for i in range(len(cromosomes)//2):
+            if cromosomes[i + len(cromosomes)//2] == "1":
+                self._llista_parelles[i] += 1
+                
     def __str__ (self):
-        a, b = "  ", "  "
-        for i in self.__cromosoma1:
-            a += f"{i} "
-        for i in self.__cromosoma2:
-            b += f"{i} "
-        return a + "\n" + b 
+        str1, str2 = "  ", "  "
+        for i in self._llista_parelles:
+            if i == 0:
+                str1 += "0"
+                str2 += "0"
+            elif i == 1:
+                str1 += "0"
+                str2 += "1"
+            elif i == 2:
+                str1 += "1"
+                str2 += "0"
+            else:
+                str1 += "1"
+                str2 += "1"
+        return str1 + "\n" + str2
+    
+
+
+

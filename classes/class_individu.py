@@ -1,4 +1,4 @@
-from provaporro import parell_cromosomes
+from class_parell_cromosomes import parell_cromosomes
 
 class individu:
     def __init__(self, cromosomes):
