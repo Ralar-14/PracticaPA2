@@ -1,35 +1,27 @@
 class parell_cromosomes:
     def __init__ (self, cromosomes=""):
-        self.__crear_estructura(cromosomes)
-    
-    def __crear_estructura(self, cromosomes):
-        '''
-        Els cromosomes venen definits per una llista de enters. 0 representa (0,0), 1 representa (0,1), 2 representa (1,0) i 3 representa (1,1))
-        '''
-        self._llista_parelles = [0] * (len(cromosomes)//2)
-        for i in range(len(cromosomes)//2):
-            if cromosomes[i] == "1":
-                self._llista_parelles[i] = 2
-        for i in range(len(cromosomes)//2):
-            if cromosomes[i + len(cromosomes)//2] == "1":
-                self._llista_parelles[i] += 1
+        self.__cromosomes_sup = cromosomes[0:len(cromosomes)//2]
+        self.__cromosomes_inf = cromosomes[len(cromosomes)//2:len(cromosomes)]
+
+    def interseccio(self, nou_parell):
+        if self.__cromosomes_sup == "":
+            self.__cromosomes_sup = nou_parell.__cromosomes_sup
+            self.__cromosomes_inf = nou_parell.__cromosomes_inf
+        else:
+            for i in range(len(self.__cromosomes_sup)):
+                if self.__cromosomes_sup[i] != nou_parell.__cromosomes_sup[i]:
+                    self.__cromosomes_sup = self.__cromosomes_sup[:i] + "-" + self.__cromosomes_sup[i+1:]
+                    self.__cromosomes_inf = self.__cromosomes_inf[:i] + "-" + self.__cromosomes_inf[i+1:]
+                elif self.__cromosomes_inf[i] != nou_parell.__cromosomes_inf[i]:
+                    self.__cromosomes_sup = self.__cromosomes_sup[:i] + "-" + self.__cromosomes_sup[i+1:]
+                    self.__cromosomes_inf = self.__cromosomes_inf[:i] + "-" + self.__cromosomes_inf[i+1:]
+
+    def reiniciar(self):
+        self.__cromosomes_sup = ""
+        self.__cromosomes_inf = ""
                 
     def __str__ (self):
-        str1, str2 = "  ", "  "
-        for i in self._llista_parelles:
-            if i == 0:
-                str1 += "0"
-                str2 += "0"
-            elif i == 1:
-                str1 += "0"
-                str2 += "1"
-            elif i == 2:
-                str1 += "1"
-                str2 += "0"
-            else:
-                str1 += "1"
-                str2 += "1"
-        return str1 + "\n" + str2
+        return f"  {self.__cromosomes_sup}" + "\n" + f"  {self.__cromosomes_inf}"  
     
 
 

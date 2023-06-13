@@ -3,10 +3,16 @@ from class_individu import individu
 from class_bintree import BinTree
 
 class conjunt_individus:
-    def __init__(self, numero_individus, numero_cromosomes, marca = 0):
+    
+    def __init__(self, num_individus, num_cromosomes, marca = 0):
+        self.numero_individus = num_individus
+        self.numero_cromosomes = num_cromosomes
         self.__individus = [None]
         self.__arbre = self.__llegir_arbre(marca)
-   
+        for _ in range(0, self.numero_individus):
+            self.afegir_individu(item())
+        print(f"experiment {self.numero_individus} {self.numero_cromosomes}")
+    
     def __llegir_arbre(self, marca):
         x = int(item())
         if x != marca:
@@ -53,6 +59,9 @@ class conjunt_individus:
     def individu(self, numero_individu):
         return self.__individus[numero_individu]
     
+    def consulta_individu(self, numero_individu):
+        print(f"consulta_individu {numero_individu}")
+        print(self.__individus[numero_individu])
 
 
         

@@ -1,7 +1,7 @@
-num_exps = 50
+num_exps = 30
 max_indvs = 300
-max_len_cromo = 1000000
-max_instr = 700
+max_len_cromo = 100000
+max_instr = 70
 len_nombre_tret = 30
 
 import random
