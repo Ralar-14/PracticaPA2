@@ -81,8 +81,8 @@ afegir_tret asdf_31 3
 consulta_individu 3
   01010101
   00001111
-  asdf_34
   asdf_31
+  asdf_34
 experiment 3 3
 consulta_individu 1
   111

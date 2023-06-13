@@ -54,7 +54,8 @@ class conjunt_trets:
         else:
             print(f"  {tret}")
             print(self.__trets[tret].parell_tret)
-            for a in self.__trets[tret].individus:
+            individus = sorted(self.__trets[tret].individus)
+            for a in individus:
                 print(f"  {a}")
 
     
