@@ -19,7 +19,7 @@ class individu:
     
     def __str__(self):
         trets = ""
-        for i in self.__trets:
+        for i in sorted(self.__trets):
             trets += f"\n  {i}"
         return str(self.__parell) + trets
 

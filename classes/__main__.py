@@ -24,5 +24,5 @@ while instruccio != 'fi':
         trets_actuals.distribucio_tret(item())
     
     instruccio = item()
-print("fi", end="")
+print("fi")
 

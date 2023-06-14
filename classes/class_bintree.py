@@ -1,6 +1,3 @@
-
-from class_cua import Cua
-
 class BinTree:
 
     #------------------- nested _Node class --------------------------
@@ -97,38 +94,6 @@ class BinTree:
         return self._root._left is None and self._root._right is None
    
     # Traversals 
-    def preorder(self):
-        """
-        returns a list with the elements of the BinTree, ordered 
-        as is specified in the definition of the pre-order traversal.
-        """
-        def _preorder(t):
-            if t is None:
-                return []
-            else:
-                return [t._element] + _preorder(t._left) + _preorder(t._right)
-
-        if self.empty():
-            return []
-        else:
-            return _preorder(self._root)        
-
-    def postorder(self):
-        """
-        returns a list with the elements of the BinTree, ordered 
-        as is specified in the definition of the post-order traversal.
-        """
-        def _postorder(t):
-            if t is None:
-                return []
-            else:
-                return _postorder(t._left) + _postorder(t._right) + [t._element] 
-
-        if self.empty():
-            return []
-        else:
-            return _postorder(self._root)
-        
     def inorder(self):
         """
         returns a list with the elements of the BinTree, ordered 
@@ -145,92 +110,4 @@ class BinTree:
         else:
             return _inorder(self._root)
 
-    def levelorder(self):
-        """
-        returns a list with the elements of the BinTree, ordered 
-        as is specified in the definition of the levels-order traversal.
-        """
-        if self.empty():
-            return []
-        else:
-            resultat = []
-            q = Cua()
-            q.enqueue(self._root)
-            while not q.buida():
-                tt = q.dequeue()
-                resultat.append(tt._element)
-                if tt._left is not None:
-                    q.enqueue(tt._left)
-                if tt._right is not None:
-                    q.enqueue(tt._right)
-            return resultat
-
-    def poda_subarbre(self,x):
-        """
-        Pre: self té tots els elements diferents
-        Si x es el valor d'algun node de self, la funció retorna True i elimina de self 
-        el node amb valor x i tots els seus descendents; altrament, el resultat es False 
-        i self no varia (és a dir, es queda igual).
-        """
-        def poda_auxiliar(node,x):
-            # Pre: node is not None and node._element != x
-            trobat = False
-            if node._left is not None: 
-                if node._left._element == x:
-                    trobat = True
-                    node._left = None
-                else:
-                    trobat = poda_auxiliar(node._left,x)
-            if not trobat and node._right is not None: 
-                if node._right._element == x:
-                    trobat = True
-                    node._right = None
-                else:
-                    trobat = poda_auxiliar(node._right,x)
-            return trobat
-        
-        if self._root is None:
-            return False
-        else:
-            if self._root._element == x:
-                self._root = None
-                return True
-            else: 
-                return poda_auxiliar(self._root,x)
-
-    def __repr__(self):
-        if self.empty():
-            return 'BinTree()'
-        elif self.leaf():
-            rt = self.get_root().__repr__()
-            return f"BinTree({rt})"
-        else:  #  Algun dels fills no és buit
-            rt = self.get_root().__repr__()
-            if self.get_right().empty():  # El fill dret és buit?
-                r_esq = self.get_left().__repr__()
-                return f"BinTree({rt}, left={r_esq})"
-            elif self.get_left().empty(): # El fill esquerre és buit?
-                r_dre = self.get_right().__repr__()
-                return f"BinTree({rt}, right={r_dre})"
-            else:                         # Cap fill és buit
-                r_esq = self.get_left().__repr__()
-                r_dre = self.get_right().__repr__()
-                return f"BinTree({rt}, left={r_esq}, right={r_dre})"
-
-    def __eq__(self, b):
-        def eq_aux(n1, n2):
-            if n1 is None:
-                return n2 is None
-            elif n2 is None:
-                return False
-            else:
-                if n1._element != n2._element:
-                    return False
-                else:
-                    return eq_aux(n1._left, n2._left) and eq_aux(n1._right, n2._right)
-            return eq_aux(self._root, b._root)
-        
     
-
-#Crea una instancia de BinTree, no muy largo, para hacer pruebas
-

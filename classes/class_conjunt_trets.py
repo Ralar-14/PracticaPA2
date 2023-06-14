@@ -24,17 +24,20 @@ class conjunt_trets:
     
     def treure_tret(self, tret, numero_individu):
         print(f"treure_tret {tret} {numero_individu}")
-        if not numero_individu in self.__trets[tret].individus:
+        if not tret in self.__trets:
             print("  error")
         else:
-            self.__experiment.treure_tret(tret, numero_individu)
-            if len(self.__trets[tret].individus) == 1:
-                self.__trets.pop(tret)
+            if not numero_individu in self.__trets[tret].individus:
+                print("  error")
             else:
-                self.__trets[tret].individus.remove(numero_individu)
-                self.__trets[tret].parell_tret.reiniciar()
-                for a in self.__trets[tret].individus:
-                    self.__trets[tret].parell_tret.interseccio(self.__experiment.individu(a).parell())
+                self.__experiment.treure_tret(tret, numero_individu)
+                if len(self.__trets[tret].individus) == 1:
+                    self.__trets.pop(tret)
+                else:
+                    self.__trets[tret].individus.remove(numero_individu)
+                    self.__trets[tret].parell_tret.reiniciar()
+                    for a in self.__trets[tret].individus:
+                        self.__trets[tret].parell_tret.interseccio(self.__experiment.individu(a).parell())
     
     def distribucio_tret(self, tret):
         print(f"distribucio_tret {tret}")

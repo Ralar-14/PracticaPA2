@@ -9,7 +9,7 @@ class conjunt_individus:
         self.numero_cromosomes = num_cromosomes
         self.__individus = [None]
         self.__arbre = self.__llegir_arbre(marca)
-        for _ in range(0, self.numero_individus):
+        for _ in range(self.numero_individus):
             self.afegir_individu(item())
         print(f"experiment {self.numero_individus} {self.numero_cromosomes}")
     
@@ -27,7 +27,7 @@ class conjunt_individus:
         if inordre == None:
             return []
         else:
-            return self.__arbre_distribucio_tret(self.__arbre, tret).inorder()
+            return inordre.inorder()
     
     def __arbre_distribucio_tret(self, arbre, tret):
         if arbre == None:
@@ -61,7 +61,10 @@ class conjunt_individus:
     
     def consulta_individu(self, numero_individu):
         print(f"consulta_individu {numero_individu}")
-        print(self.__individus[numero_individu])
+        if numero_individu < 1 or numero_individu > self.numero_individus:
+            print("  error")
+        else:
+            print(self.__individus[numero_individu])
 
 
         
